@@ -3,12 +3,12 @@ import SearchBar from "../searchBar/SearchBar";
 
 const Navbar = () => {
   const navLink = (
-    <ul className="flex gap-4">
+    <ul className="flex gap-2 text-sm md:text-lg md:gap-4 p-2">
       <li>
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/allProducts">All Products</Link>
+        <Link className=" text-nowrap" to="/allProducts">All Products</Link>
       </li>
       <li>
         <Link to="/user">User</Link>
@@ -23,7 +23,7 @@ const Navbar = () => {
   );
   return (
     <nav>
-      <div className="flex justify-between items-center px-2 bg-blue-gray-500 text-white h-[64px]">
+      <div className="flex flex-col md:flex-row md:justify-between items-center px-2 py-1 bg-blue-gray-500 text-white md:h-[64px]">
         <div>
           <Link to="/">
             <div> Sweta&apos;s Shop</div>
