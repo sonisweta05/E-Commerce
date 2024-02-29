@@ -35,7 +35,7 @@ const Category = () => {
   ];
   return (
     <div>
-      <div className="flex mt-2 h-[200px]">
+      <div className="flex mt-2 ">
         <div className="flex gap-4 p-2 overflow-x-scroll no-scrollbar">
           <div className="flex">
             {category.map((cat,index) => {
