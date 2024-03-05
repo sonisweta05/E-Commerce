@@ -3,14 +3,20 @@ import HomePageProductCard from "../components/homePageProductCard/HomePageProdu
 import Testimonials from "../components/testimonials/Testimonials";
 
 const HomePage = () => {
+
   return (
     <>
       <div>
         <div>
-          <img src="../../img/hero1.png" className=" h-44 md:h-[180px] w-full" />
+          <img
+            src="../../img/hero1.png"
+            className=" h-44 md:h-[180px] w-full"
+          />
         </div>
-        <div><Category/></div>
-        <HomePageProductCard/>
+        <div>
+          <Category />
+        </div>
+        <HomePageProductCard />
         <Testimonials />
       </div>
     </>

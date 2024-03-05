@@ -5,9 +5,13 @@ import Navbar from "../navbar/Navbar";
 const Layout = ({ children }) => {
   return (
     <div className="">
-      <Navbar />
+      <div>
+        <Navbar />
+      </div>
       <div className="main-content min-h-screen">{children}</div>
-      <Footer />
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 };

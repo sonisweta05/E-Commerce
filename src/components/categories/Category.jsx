@@ -35,15 +35,14 @@ const Category = () => {
   ];
   return (
     <div>
-      <div className="flex mt-2 ">
+      <div className="flex mt-2 justify-center">
         <div className="flex gap-4 p-2 overflow-x-scroll no-scrollbar">
           <div className="flex">
             {category.map((cat,index) => {
-              console.log(cat);
               return (
-                <div key={index} className="px-3 lg:px-10">
+                <div key={index} className="px-3 lg:px-10 cursor-pointer hover:scale-105 transition ease-in-out" >
                   <div className="flex justify-center items-center bg-blue-gray-500 w-16 h-16 rounded-full">
-                    <img className="w-[100px]" src={cat.image} />
+                    <img className="w-[100px] " src={cat.image} />
                   </div>
                   <h1 className="text-sm pt-3 lg:text-lg text-center font-medium first-letter:uppercase">
                     {" "}

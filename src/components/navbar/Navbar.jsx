@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import SearchBar from "../searchBar/SearchBar";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+
+  const displayName = useSelector((state)=> state.user)
+  console.log(displayName);
   const navLink = (
     <ul className="flex gap-2 text-sm md:text-lg md:gap-4 p-2">
       <li>
@@ -11,7 +15,7 @@ const Navbar = () => {
         <Link className=" text-nowrap" to="/allProducts">All Products</Link>
       </li>
       <li>
-        <Link to="/user">User</Link>
+        <Link to="/userdashboard">User</Link>
       </li>
       <li>
         <Link to="/cart">Cart</Link>
@@ -31,6 +35,12 @@ const Navbar = () => {
         </div>
         <div className="">{navLink}</div>
         <SearchBar />
+        <div>
+          <div></div>
+          
+          <img className="w-10 h-10" src="https://static-00.iconduck.com/assets.00/user-icon-2048x2048-ihoxz4vq.png"/>
+        <p>{displayName}</p>
+        </div>
       </div>
     </nav>
   );
