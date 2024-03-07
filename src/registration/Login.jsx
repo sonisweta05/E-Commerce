@@ -7,7 +7,7 @@ import {
 import { useDispatch } from "react-redux";
 import { auth } from "../firebase/FIreBaseConfig";
 import { checkValidData } from "./validate";
-import { addUser, } from "../redux/userSlice";
+import { addUser } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -19,7 +19,6 @@ const Login = () => {
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
-
   const handleButtonClick = (e) => {
     e.preventDefault();
     const message = checkValidData(
@@ -41,12 +40,14 @@ const Login = () => {
             displayName: name.current.value,
           })
             .then(() => {
-              const { uid, email, displayName } = auth.currentUser;
+              const { uid, email, displayName, role } = auth.currentUser;
+              localStorage.setItem("user", JSON.stringify(user));
               dispatch(
                 addUser({
                   uid: uid,
                   email: email,
                   displayName: displayName,
+                  role: role,
                 })
               );
               navigate("/");
@@ -67,9 +68,9 @@ const Login = () => {
         password.current.value
       )
         .then((userCredential) => {
-          console.log("Sign in");
           // eslint-disable-next-line no-unused-vars
           const user = userCredential.user;
+          localStorage.setItem("user", JSON.stringify(user));
           navigate("/");
         })
         .catch((error) => {

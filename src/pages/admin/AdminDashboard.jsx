@@ -1,4 +1,5 @@
-const UserDashboard = () => {
+
+const AdminDashboard = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const getCurrentDate = (separator = "/") => {
     let newDate = new Date();
@@ -25,7 +26,7 @@ const UserDashboard = () => {
               <h1>Name : {user?.displayName}</h1>
               <p>Email : {user?.email}</p>
               <p>Date : {getCurrentDate()}</p>
-              <p>Role : user</p>
+              <p>Role : Admin</p>
             </div>
           </div>
         </section>
@@ -35,6 +36,6 @@ const UserDashboard = () => {
       </div>
     </div>
   );
-};
+}
 
-export default UserDashboard;
+export default AdminDashboard
